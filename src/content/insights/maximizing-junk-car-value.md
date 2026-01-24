@@ -52,4 +52,4 @@ Some yards pay more for cars with fluids already drained. Check with us first—
 
 ## Free Pickup Available
 
-Can't get your car to us? No problem. We offer free junk car pickup throughout Jackson County. Call (517) 555-1234 to schedule.
+Can't get your car to us? No problem. We offer free junk car pickup throughout Jackson County. Call (517) 937-7748 to schedule.

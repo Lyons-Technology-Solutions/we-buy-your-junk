@@ -27,10 +27,10 @@ export const theme = {
 export const business = {
   name: 'We Buy Your Junk LLC',
   tagline: 'Junking for Jesus in Jackson',
-  phone: '(517) 555-1234', // Replace with actual
-  email: 'info@webuyyourjunk.net',
+  phone: '(517) 937-7748',
+  email: 'webuyyourjunk45@yahoo.com',
   address: {
-    street: '123 Industrial Dr', // Replace with actual
+    street: '2756 E South St', // Replace with actual
     city: 'Jackson',
     state: 'MI',
     zip: '49201',

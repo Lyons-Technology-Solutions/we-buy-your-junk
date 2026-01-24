@@ -42,4 +42,4 @@ Maria now earns $500-800 per month from scrapping, all while keeping recyclable 
 
 ## Your Story
 
-Are you a Jackson-area recycler with a story to share? We'd love to feature you in a future article. Contact us at info@webuyyourjunk.net.
+Are you a Jackson-area recycler with a story to share? We'd love to feature you in a future article. Contact us at webuyyourjunk45@yahoo.com.
