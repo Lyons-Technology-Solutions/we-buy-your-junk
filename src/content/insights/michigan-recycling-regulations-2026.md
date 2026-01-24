@@ -39,4 +39,4 @@ For most scrappers, these changes are minor inconveniences designed to reduce me
 
 We Buy Your Junk has always operated with full compliance to state and federal regulations. These new rules align with our existing practices, and we're here to help you navigate any changes.
 
-Questions? Give us a call at (517) 937-7748.
+Questions? Give us a call at (517) 220-6035.

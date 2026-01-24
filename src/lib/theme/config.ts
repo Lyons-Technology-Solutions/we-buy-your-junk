@@ -27,8 +27,8 @@ export const theme = {
 export const business = {
   name: 'We Buy Your Junk LLC',
   tagline: 'Junking for Jesus in Jackson',
-  phone: '(517) 937-7748',
-  email: 'webuyyourjunk45@yahoo.com',
+  phone: '(517) 220-6035',
+  email: 'cllarocque@webuyyourjunk.org',
   address: {
     street: '2756 E South St', // Replace with actual
     city: 'Jackson',
@@ -37,12 +37,12 @@ export const business = {
     country: 'US',
   },
   hours: {
-    weekdays: '8:00 AM - 5:00 PM',
-    saturday: '8:00 AM - 12:00 PM',
+    weekdays: '9:00 AM - 5:00 PM',
+    saturday: 'Closed',
     sunday: 'Closed',
   },
   established: 2008,
   social: {
-    facebook: 'https://facebook.com/webuyyourjunk',
+    facebook: 'https://www.facebook.com/306856169424998',
   },
 }
