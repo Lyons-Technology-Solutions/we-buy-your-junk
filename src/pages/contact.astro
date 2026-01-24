@@ -105,26 +105,30 @@ import Layout from '../layouts/Layout.astro';
               Have a question or need a specific quote? We'll get back to you within 24 hours.
             </p>
             
-            <form class="space-y-12">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="space-y-12">
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="hidden">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+              </p>
               <div class="relative group">
                 <label for="name" class="block text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2 transition-transform group-focus-within:-translate-y-1">Your Full Name</label>
-                <input type="text" id="name" placeholder="John Doe" class="w-full bg-transparent border-b-2 border-warm-gray focus:border-primary px-0 py-4 font-display text-xl uppercase placeholder:text-warm-gray/40 focus:outline-none transition-all" />
+                <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full bg-transparent border-b-2 border-warm-gray focus:border-primary px-0 py-4 font-display text-xl uppercase placeholder:text-warm-gray/40 focus:outline-none transition-all" />
               </div>
               
               <div class="grid md:grid-cols-2 gap-12">
                 <div class="relative group">
                   <label for="email" class="block text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2 transition-transform group-focus-within:-translate-y-1">Email Address</label>
-                  <input type="email" id="email" placeholder="john@email.com" class="w-full bg-transparent border-b-2 border-warm-gray focus:border-primary px-0 py-4 font-display text-xl uppercase placeholder:text-warm-gray/40 focus:outline-none transition-all" />
+                  <input type="email" id="email" name="email" required placeholder="john@email.com" class="w-full bg-transparent border-b-2 border-warm-gray focus:border-primary px-0 py-4 font-display text-xl uppercase placeholder:text-warm-gray/40 focus:outline-none transition-all" />
                 </div>
                 <div class="relative group">
                   <label for="phone" class="block text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2 transition-transform group-focus-within:-translate-y-1">Phone Number</label>
-                  <input type="tel" id="phone" placeholder="(517) 000-0000" class="w-full bg-transparent border-b-2 border-warm-gray focus:border-primary px-0 py-4 font-display text-xl uppercase placeholder:text-warm-gray/40 focus:outline-none transition-all" />
+                  <input type="tel" id="phone" name="phone" placeholder="(517) 000-0000" class="w-full bg-transparent border-b-2 border-warm-gray focus:border-primary px-0 py-4 font-display text-xl uppercase placeholder:text-warm-gray/40 focus:outline-none transition-all" />
                 </div>
               </div>
 
               <div class="relative group">
                 <label for="subject" class="block text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2 transition-transform group-focus-within:-translate-y-1">I'm interested in</label>
-                <select id="subject" class="w-full bg-transparent border-b-2 border-warm-gray focus:border-primary px-0 py-4 font-display text-xl uppercase focus:outline-none transition-all appearance-none cursor-pointer">
+                <select id="subject" name="subject" required class="w-full bg-transparent border-b-2 border-warm-gray focus:border-primary px-0 py-4 font-display text-xl uppercase focus:outline-none transition-all appearance-none cursor-pointer">
                   <option>Scrap Metal Quote</option>
                   <option>Junk Car Pickup</option>
                   <option>Used Auto Parts</option>
@@ -135,7 +139,7 @@ import Layout from '../layouts/Layout.astro';
 
               <div class="relative group">
                 <label for="message" class="block text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2 transition-transform group-focus-within:-translate-y-1">Your Message</label>
-                <textarea id="message" rows="4" placeholder="How can we help you?" class="w-full bg-transparent border-b-2 border-warm-gray focus:border-primary px-0 py-4 font-display text-xl uppercase placeholder:text-warm-gray/40 focus:outline-none transition-all resize-none"></textarea>
+                <textarea id="message" name="message" rows="4" required placeholder="How can we help you?" class="w-full bg-transparent border-b-2 border-warm-gray focus:border-primary px-0 py-4 font-display text-xl uppercase placeholder:text-warm-gray/40 focus:outline-none transition-all resize-none"></textarea>
               </div>
 
               <button type="submit" class="group relative inline-flex items-center gap-4 bg-secondary text-white px-12 py-6 rounded-full text-sm font-black tracking-widest uppercase transition-all hover:bg-primary overflow-hidden w-full justify-center">

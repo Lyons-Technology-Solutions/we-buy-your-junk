@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Message Sent | We Buy Your Junk LLC | Jackson, MI"
+  description="Thank you for contacting We Buy Your Junk LLC. We'll get back to you within 24 hours."
+>
+  <section class="min-h-screen flex items-center justify-center bg-background relative overflow-hidden pt-20">
+    <!-- Background Typography -->
+    <div class="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.02] select-none pointer-events-none hidden lg:block">
+      <p class="text-[30vw] font-black leading-none uppercase italic">Thanks</p>
+    </div>
+
+    <div class="container relative z-10">
+      <div class="max-w-2xl mx-auto text-center" data-animate="fade-up">
+        <!-- Success Icon -->
+        <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-12" data-animate="scale-in">
+          <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+
+        <p class="text-primary font-black text-[10px] tracking-[0.4em] uppercase mb-6">Message Received</p>
+        
+        <h1 class="text-5xl md:text-7xl font-display uppercase tracking-tighter leading-none mb-8">
+          Thank <span class="text-primary italic">You!</span>
+        </h1>
+        
+        <p class="text-text-muted text-xl leading-relaxed mb-12">
+          We've received your message and will get back to you within 24 hours. If you need immediate assistance, give us a call.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="/" class="group relative inline-flex items-center gap-4 bg-secondary text-white px-10 py-5 rounded-full text-sm font-bold tracking-widest uppercase transition-all hover:bg-primary overflow-hidden">
+            <span class="relative z-10">Back to Home</span>
+            <span class="relative z-10">→</span>
+          </a>
+          <a href="tel:+15172206035" class="pill-link">
+            Call (517) 220-6035
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
