@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { fallbackImages } from '../lib/images';
+import { Image } from 'astro:assets';
+import { serviceInventory, altTags } from '../lib/images';
 
 const categories = [
   { name: 'Power & Drive', desc: 'Complete engines, transmissions, and differentials. Performance tested.', num: '01' },
@@ -87,7 +88,7 @@ const process = [
         <div class="lg:col-span-5 relative" data-animate="fade-right">
           <div class="img-hover-zoom aspect-[4/5] rounded-[3rem] bg-surface-dark overflow-hidden shadow-2xl relative z-10 border-8 border-white">
             <div class="absolute inset-0 bg-secondary/20 mix-blend-multiply"></div>
-            <img src={fallbackImages.serviceInventory} alt="Used auto parts warehouse inventory" class="w-full h-full object-cover" loading="lazy" />
+            <Image src={serviceInventory} alt={altTags.serviceInventory} class="w-full h-full object-cover" loading="lazy" />
           </div>
           <!-- Grid Breaking Accent -->
           <div class="absolute -top-12 -left-8 w-48 h-48 border-t-2 border-l-2 border-primary/30 rounded-tl-[4rem] hidden lg:block"></div>

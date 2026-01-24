@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { fallbackImages } from '../lib/images';
+import { Image } from 'astro:assets';
+import { serviceJunkCars, altTags } from '../lib/images';
 
 const metals = [
   { name: 'Bare Bright Copper', desc: 'The highest value scrap. Pure, uncoated copper wire.', highlight: true },
@@ -140,7 +141,7 @@ const faqs = [
         <div class="lg:col-span-6 relative lg:overlap-left" data-animate="fade-left">
           <div class="img-hover-zoom aspect-[4/5] rounded-[3rem] bg-surface-dark overflow-hidden relative shadow-2xl border-8 border-white/10">
             <div class="absolute inset-0 bg-secondary/20 mix-blend-multiply"></div>
-            <img src={fallbackImages.serviceJunkCars} alt="Junk car removal and towing" class="w-full h-full object-cover" loading="lazy" />
+            <Image src={serviceJunkCars} alt={altTags.serviceJunkCars} class="w-full h-full object-cover" loading="lazy" />
           </div>
           <!-- Decorative breaking element -->
           <div class="absolute -bottom-12 -left-8 w-48 h-48 border-b-2 border-l-2 border-primary/30 rounded-bl-[4rem] hidden lg:block"></div>

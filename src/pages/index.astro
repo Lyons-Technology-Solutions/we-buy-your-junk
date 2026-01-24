@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { fallbackImages } from '../lib/images';
+import { Image } from 'astro:assets';
+import { heroYard, serviceAutoParts, facilityWarehouse, altTags } from '../lib/images';
 ---
 
 <Layout 
@@ -57,7 +58,7 @@ import { fallbackImages } from '../lib/images';
               <p class="text-xs tracking-[0.2em] uppercase font-bold mb-2">Industrial Excellence</p>
               <p class="font-display text-2xl uppercase italic">The Yard</p>
             </div>
-            <img src={fallbackImages.heroYard} alt="Scrap yard operations with metal piles" class="w-full h-full object-cover" loading="eager" />
+            <Image src={heroYard} alt={altTags.heroYard} class="w-full h-full object-cover" loading="eager" />
           </div>
           <!-- Decorative breaking element -->
           <div class="absolute -top-12 -right-8 w-48 h-48 border-t-2 border-r-2 border-primary/30 rounded-tr-[5rem] hidden lg:block" data-animate="scale-in" data-delay="0.6"></div>
@@ -125,7 +126,7 @@ import { fallbackImages } from '../lib/images';
               </div>
               <div class="img-hover-zoom aspect-[16/10] rounded-[2rem] bg-surface relative overflow-hidden">
                 <div class="absolute inset-0 bg-secondary/5 mix-blend-multiply"></div>
-                <img src={fallbackImages.serviceAutoParts} alt="Used auto parts inventory" class="w-full h-full object-cover" loading="lazy" />
+                <Image src={serviceAutoParts} alt={altTags.serviceAutoParts} class="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
           </a>
@@ -237,10 +238,10 @@ import { fallbackImages } from '../lib/images';
         <div class="relative" data-animate="fade-right">
           <!-- Off-grid image stacking -->
           <div class="img-hover-zoom aspect-square w-4/5 rounded-3xl bg-secondary relative z-10 shadow-2xl overflow-hidden">
-             <img src={fallbackImages.facilityScales} alt="Industrial weighing scale" class="w-full h-full object-cover" loading="lazy" />
+             <Image src={facilityWarehouse} alt={altTags.facilityWarehouse} class="w-full h-full object-cover" loading="lazy" />
           </div>
           <div class="img-hover-zoom aspect-[4/3] w-3/5 rounded-3xl bg-surface-dark absolute -bottom-12 -right-4 z-20 shadow-2xl border-8 border-white overflow-hidden">
-             <img src={fallbackImages.facilityWarehouse} alt="Precision measurement equipment" class="w-full h-full object-cover" loading="lazy" />
+             <Image src={heroYard} alt="We Buy Your Junk LLC certified scales and precision weighing equipment in Jackson MI" class="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
 

@@ -1,7 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import { fallbackImages } from '../../lib/images';
+import { Image } from 'astro:assets';
+import { blogDefault, altTags } from '../../lib/images';
 import ArticleStructuredData from '../../components/ArticleStructuredData.astro';
 import BreadcrumbStructuredData from '../../components/BreadcrumbStructuredData.astro';
 
@@ -140,7 +141,7 @@ const articleUrl = `${siteUrl}/insights/${entrySlug}`;
     <div class="container mb-16" data-animate="scale-in" data-delay="0.25">
       <div class="max-w-5xl mx-auto">
         <div class="aspect-[21/9] bg-cream rounded-[2.5rem] overflow-hidden relative">
-          <img src={fallbackImages.blogDefault} alt={entry.data.title} class="absolute inset-0 w-full h-full object-cover" loading="eager" />
+          <Image src={blogDefault} alt={`${entry.data.title} - We Buy Your Junk LLC Jackson Michigan scrap metal insights`} class="absolute inset-0 w-full h-full object-cover" loading="eager" />
           <div class="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent"></div>
           <!-- Decorative Elements -->
           <div class="absolute top-8 left-8">

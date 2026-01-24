@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { fallbackImages } from '../lib/images';
+import { Image } from 'astro:assets';
+import { facilityExterior, facilityHistory, altTags } from '../lib/images';
 
 const values = [
   { title: 'Faith-Driven', desc: 'Our operations are guided by Christian principles—honesty, respect, and stewardship.', num: '01' },
@@ -64,7 +65,7 @@ const milestones = [
         <div class="lg:col-span-6 relative" data-animate="fade-right">
           <div class="img-hover-zoom aspect-square rounded-[3rem] bg-secondary overflow-hidden shadow-2xl relative z-10 border-8 border-white">
             <div class="absolute inset-0 bg-secondary/20 mix-blend-multiply"></div>
-            <img src={fallbackImages.facilityExterior} alt="Jackson scrap metal facility" class="w-full h-full object-cover" loading="lazy" />
+            <Image src={facilityExterior} alt={altTags.facilityExterior} class="w-full h-full object-cover" loading="lazy" />
           </div>
           <!-- Grid Breaking Accent -->
           <div class="absolute -bottom-12 -right-8 w-48 h-48 border-b-2 border-r-2 border-primary/30 rounded-br-[4rem] hidden lg:block"></div>
@@ -139,7 +140,7 @@ const milestones = [
           </p>
           <!-- Small decorative image -->
           <div class="img-hover-zoom aspect-[4/3] rounded-2xl bg-surface shadow-lg hidden lg:block overflow-hidden">
-             <img src={fallbackImages.facilityHistory} alt="Industrial metal recycling history" class="w-full h-full object-cover" loading="lazy" />
+             <Image src={facilityHistory} alt={altTags.facilityHistory} class="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
 
