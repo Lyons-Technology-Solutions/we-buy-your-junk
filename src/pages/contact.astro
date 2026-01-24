@@ -105,11 +105,7 @@ import Layout from '../layouts/Layout.astro';
               Have a question or need a specific quote? We'll get back to you within 24 hours.
             </p>
             
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="space-y-12">
-              <input type="hidden" name="form-name" value="contact" />
-              <p class="hidden">
-                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-              </p>
+            <form id="contact-form" class="space-y-12">
               <div class="relative group">
                 <label for="name" class="block text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2 transition-transform group-focus-within:-translate-y-1">Your Full Name</label>
                 <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full bg-transparent border-b-2 border-warm-gray focus:border-primary px-0 py-4 font-display text-xl uppercase placeholder:text-warm-gray/40 focus:outline-none transition-all" />
@@ -142,8 +138,11 @@ import Layout from '../layouts/Layout.astro';
                 <textarea id="message" name="message" rows="4" required placeholder="How can we help you?" class="w-full bg-transparent border-b-2 border-warm-gray focus:border-primary px-0 py-4 font-display text-xl uppercase placeholder:text-warm-gray/40 focus:outline-none transition-all resize-none"></textarea>
               </div>
 
-              <button type="submit" class="group relative inline-flex items-center gap-4 bg-secondary text-white px-12 py-6 rounded-full text-sm font-black tracking-widest uppercase transition-all hover:bg-primary overflow-hidden w-full justify-center">
-                <span class="relative z-10">Send Message</span>
+              <div id="form-status" class="hidden rounded-2xl p-6 text-center font-bold"></div>
+
+              <button type="submit" id="submit-btn" class="group relative inline-flex items-center gap-4 bg-secondary text-white px-12 py-6 rounded-full text-sm font-black tracking-widest uppercase transition-all hover:bg-primary overflow-hidden w-full justify-center">
+                <span class="btn-text relative z-10">Send Message</span>
+                <span class="btn-loading hidden relative z-10">Sending...</span>
                 <span class="relative z-10">→</span>
               </button>
             </form>
@@ -170,4 +169,53 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const btnText = submitBtn.querySelector('.btn-text') as HTMLElement;
+  const btnLoading = submitBtn.querySelector('.btn-loading') as HTMLElement;
+  const formStatus = document.getElementById('form-status') as HTMLElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Show loading state
+    btnText.classList.add('hidden');
+    btnLoading.classList.remove('hidden');
+    submitBtn.disabled = true;
+    formStatus.classList.add('hidden');
+
+    try {
+      const formData = new FormData(form);
+      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // Success
+        formStatus.textContent = '✓ Message sent successfully! We\'ll get back to you within 24 hours.';
+        formStatus.className = 'rounded-2xl p-6 text-center font-bold bg-primary/10 text-primary';
+        form.reset();
+      } else {
+        // Error from API
+        formStatus.textContent = result.error || 'Something went wrong. Please try again.';
+        formStatus.className = 'rounded-2xl p-6 text-center font-bold bg-red-100 text-red-600';
+      }
+    } catch (error) {
+      // Network error
+      formStatus.textContent = 'Network error. Please check your connection and try again.';
+      formStatus.className = 'rounded-2xl p-6 text-center font-bold bg-red-100 text-red-600';
+    } finally {
+      // Reset button
+      btnText.classList.remove('hidden');
+      btnLoading.classList.add('hidden');
+      submitBtn.disabled = false;
+    }
+  });
+</script>
 </Layout>
