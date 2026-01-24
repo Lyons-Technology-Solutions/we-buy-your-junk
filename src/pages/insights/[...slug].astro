@@ -139,13 +139,12 @@ const articleUrl = `${siteUrl}/insights/${entrySlug}`;
     <div class="container mb-16" data-animate="scale-in" data-delay="0.25">
       <div class="max-w-5xl mx-auto">
         <div class="aspect-[21/9] bg-cream rounded-[2.5rem] overflow-hidden relative">
-          <div class="absolute inset-0 flex items-center justify-center">
-            <p class="text-secondary/10 font-black text-6xl md:text-8xl italic uppercase">{entry.data.category}</p>
-          </div>
+          <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?w=1200&h=514&fit=crop" alt={entry.data.title} class="absolute inset-0 w-full h-full object-cover" loading="eager" />
+          <div class="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent"></div>
           <!-- Decorative Elements -->
           <div class="absolute top-8 left-8">
             <span class="bg-primary text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full">
-              Featured
+              {entry.data.category}
             </span>
           </div>
         </div>
