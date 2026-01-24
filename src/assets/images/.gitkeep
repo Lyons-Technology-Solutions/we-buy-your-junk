@@ -1,0 +1,15 @@
+# Image Assets Directory
+
+Place your custom stock photos here. See README below for required images.
+
+## Folder Structure
+- hero/ - Main hero images
+- services/ - Service-specific images  
+- facility/ - Facility and equipment photos
+- blog/ - Blog/insights featured images
+
+## Recommended Specs
+- Format: JPG or WebP
+- Hero images: 1600x1200px minimum
+- Service images: 800x1000px minimum
+- Aspect ratios maintained by Astro Image component
