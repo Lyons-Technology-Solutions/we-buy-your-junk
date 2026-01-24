@@ -4,27 +4,42 @@ import { getCollection } from 'astro:content';
 import ArticleStructuredData from '../../components/ArticleStructuredData.astro';
 import BreadcrumbStructuredData from '../../components/BreadcrumbStructuredData.astro';
 
+export const prerender = true;
+
 export async function getStaticPaths() {
-  const insights = await getCollection('insights', ({ data }) => !data.draft);
-  return insights.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
+  const allInsights = await getCollection('insights', ({ data }) => !data.draft);
+
+  return allInsights.map((entry) => ({
+    params: { slug: entry.slug ?? entry.id }
   }));
 }
 
-const { entry } = Astro.props;
+const slugParam = Astro.params.slug;
+const slug = Array.isArray(slugParam) ? slugParam.join('/') : slugParam;
+
+if (!slug) {
+  return Astro.redirect('/insights');
+}
+
+const allInsights = await getCollection('insights', ({ data }) => !data.draft);
+const entry = allInsights.find((insight) => (insight.slug ?? insight.id) === slug);
+
+if (!entry || entry.data.draft) {
+  return Astro.redirect('/insights');
+}
 const { Content } = await entry.render();
 
+const entrySlug = entry.slug ?? entry.id;
+
 // Get related articles (same category, excluding current)
-const allInsights = await getCollection('insights', ({ data }) => !data.draft);
 const relatedInsights = allInsights
-  .filter(i => i.slug !== entry.slug && i.data.category === entry.data.category)
+  .filter(i => i.id !== entry.id && i.data.category === entry.data.category)
   .slice(0, 2);
 
 // If not enough related by category, fill with recent articles
 if (relatedInsights.length < 2) {
   const moreInsights = allInsights
-    .filter(i => i.slug !== entry.slug && !relatedInsights.find(r => r.slug === i.slug))
+    .filter(i => i.id !== entry.id && !relatedInsights.find(r => r.id === i.id))
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
     .slice(0, 2 - relatedInsights.length);
   relatedInsights.push(...moreInsights);
@@ -40,7 +55,7 @@ function formatShortDate(date: Date): string {
 }
 
 const siteUrl = 'https://www.webuyyourjunk.net';
-const articleUrl = `${siteUrl}/insights/${entry.slug}`;
+const articleUrl = `${siteUrl}/insights/${entrySlug}`;
 ---
 
 <Layout 
@@ -66,7 +81,7 @@ const articleUrl = `${siteUrl}/insights/${entry.slug}`;
     items={[
       { name: 'Home', url: '/' },
       { name: 'Insights', url: '/insights' },
-      { name: entry.data.title, url: `/insights/${entry.slug}` }
+      { name: entry.data.title, url: `/insights/${entry.id}` }
     ]}
   />
 
@@ -225,7 +240,7 @@ const articleUrl = `${siteUrl}/insights/${entry.slug}`;
 
         <div class="grid md:grid-cols-2 gap-8" data-stagger>
           {relatedInsights.map((related) => (
-            <a href={`/insights/${related.slug}`} class="group bg-white rounded-[2rem] overflow-hidden card-tactile">
+            <a href={`/insights/${related.id}`} class="group bg-white rounded-[2rem] overflow-hidden card-tactile">
               <div class="p-10 flex flex-col min-h-[280px]">
                 <div class="flex items-center justify-between mb-6">
                   <span class="bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full">

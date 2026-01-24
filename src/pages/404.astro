@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Page Not Found | We Buy Your Junk LLC"
+  description="The page you requested doesn't exist. Head back home or explore our latest insights."
+>
+  <section class="min-h-[80vh] flex items-center bg-cream relative overflow-hidden pt-32 pb-24">
+    <div class="absolute -top-24 -right-16 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-1/3 h-full bg-primary/5 -skew-x-12 hidden lg:block"></div>
+
+    <div class="container relative z-10">
+      <div class="max-w-3xl">
+        <p class="text-primary font-black text-[10px] tracking-[0.4em] uppercase mb-6" data-animate="fade-up">
+          Error 404
+        </p>
+        <h1 class="text-5xl md:text-7xl font-display uppercase tracking-tighter leading-[0.9] mb-8" data-animate="fade-up" data-delay="0.1">
+          That page got <span class="text-primary italic">recycled</span>.
+        </h1>
+        <p class="text-text-muted text-xl leading-relaxed mb-12 max-w-2xl" data-animate="fade-up" data-delay="0.2">
+          The link you followed doesn’t exist or has moved. Head back home or explore our latest insights to stay on track.
+        </p>
+        <div class="flex flex-wrap gap-6 items-center" data-animate="fade-up" data-delay="0.3">
+          <a href="/" class="group relative inline-flex items-center gap-4 bg-secondary text-white px-10 py-5 rounded-full text-sm font-bold tracking-widest uppercase transition-all hover:bg-primary overflow-hidden">
+            <span class="relative z-10">Back Home</span>
+            <span class="relative z-10">→</span>
+          </a>
+          <a href="/insights" class="pill-link">
+            Browse Insights <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-16 grid md:grid-cols-3 gap-6" data-stagger>
+        <a href="/scrap" class="card-tactile rounded-[2rem] p-8 group">
+          <p class="text-primary font-black text-[10px] tracking-[0.3em] uppercase mb-4">Quick Link</p>
+          <h3 class="text-2xl font-display uppercase mb-3 group-hover:text-primary transition-colors">Scrap Prices</h3>
+          <p class="text-text-muted text-sm leading-relaxed mb-6">See today’s metal rates and what we accept.</p>
+          <span class="text-secondary font-black text-[10px] uppercase tracking-widest group-hover:text-primary transition-colors">View Rates →</span>
+        </a>
+
+        <a href="/about" class="card-tactile rounded-[2rem] p-8 group">
+          <p class="text-primary font-black text-[10px] tracking-[0.3em] uppercase mb-4">Quick Link</p>
+          <h3 class="text-2xl font-display uppercase mb-3 group-hover:text-primary transition-colors">About the Yard</h3>
+          <p class="text-text-muted text-sm leading-relaxed mb-6">Meet the team and learn our Jackson story.</p>
+          <span class="text-secondary font-black text-[10px] uppercase tracking-widest group-hover:text-primary transition-colors">Our Story →</span>
+        </a>
+
+        <a href="/contact" class="card-tactile rounded-[2rem] p-8 group">
+          <p class="text-primary font-black text-[10px] tracking-[0.3em] uppercase mb-4">Quick Link</p>
+          <h3 class="text-2xl font-display uppercase mb-3 group-hover:text-primary transition-colors">Get Directions</h3>
+          <p class="text-text-muted text-sm leading-relaxed mb-6">Find the yard fast and call ahead if needed.</p>
+          <span class="text-secondary font-black text-[10px] uppercase tracking-widest group-hover:text-primary transition-colors">Contact →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

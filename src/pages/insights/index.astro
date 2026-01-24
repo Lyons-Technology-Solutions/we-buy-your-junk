@@ -7,7 +7,7 @@ const allInsights = await getCollection('insights', ({ data }) => !data.draft);
 const sortedInsights = allInsights.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const featuredInsight = sortedInsights.find(i => i.data.featured);
-const regularInsights = sortedInsights.filter(i => !i.data.featured || i.slug !== featuredInsight?.slug);
+const regularInsights = sortedInsights.filter(i => !i.data.featured || i.id !== featuredInsight?.id);
 
 // Format date helper
 function formatDate(date: Date): string {
@@ -69,7 +69,7 @@ function formatDate(date: Date): string {
         <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
           <!-- Featured Image/Placeholder -->
           <div class="lg:col-span-7 relative" data-animate="fade-right">
-            <a href={`/insights/${featuredInsight.slug}`} class="block aspect-[4/3] bg-secondary rounded-[2.5rem] overflow-hidden relative group">
+            <a href={`/insights/${featuredInsight.id}`} class="block aspect-[4/3] bg-secondary rounded-[2.5rem] overflow-hidden relative group">
               <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent z-10"></div>
               <div class="absolute inset-0 flex items-center justify-center">
                 <p class="text-white/10 font-black text-6xl italic uppercase">Featured</p>
@@ -164,7 +164,7 @@ function formatDate(date: Date): string {
       <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-stagger>
         {regularInsights.map((insight, index) => (
           <a 
-            href={`/insights/${insight.slug}`} 
+            href={`/insights/${insight.id}`} 
             class:list={[
               "article-card group bg-white rounded-[2rem] overflow-hidden card-tactile relative",
               index === 0 ? "md:col-span-2 lg:col-span-2" : "",
@@ -252,14 +252,15 @@ function formatDate(date: Date): string {
         
         articles.forEach((article, index) => {
           if (index < newVisibleCount) {
-            article.style.display = '';
-            article.style.opacity = '0';
-            article.style.transform = 'translateY(20px)';
+            const el = article as HTMLElement;
+            el.style.display = '';
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
             
             setTimeout(() => {
-              article.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-              article.style.opacity = '1';
-              article.style.transform = 'translateY(0)';
+              el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+              el.style.opacity = '1';
+              el.style.transform = 'translateY(0)';
             }, (index - visibleCount) * 100);
           }
         });

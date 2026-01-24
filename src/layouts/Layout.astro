@@ -54,6 +54,8 @@ const ogImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     
+    <slot name="head" />
+
     <!-- Local Business Schema -->
     <StructuredData />
   </head>
