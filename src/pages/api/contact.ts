@@ -33,7 +33,7 @@ export const POST: APIRoute = async ({ request }) => {
     // Send email via Resend
     const { data, error } = await resend.emails.send({
       from: 'We Buy Your Junk <onboarding@resend.dev>',
-      to: ['marketing@techlts.com'],
+      to: ['marketing@techlts.com', 'akai@techlts.com'],
       replyTo: email,
       subject: `New Contact Form: ${subject}`,
       html: `
