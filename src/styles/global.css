@@ -4,8 +4,8 @@
 /* 1. Design System & Variables */
 /* -------------------------------------------------------------------------- */
 @theme {
-  --color-primary: #8a3d22; /* Maximum contrast terracotta */
-  --color-primary-dark: #6b2d18;
+  --color-primary: #0077B5; /* Teal from logo */
+  --color-primary-dark: #005a8c;
   --color-secondary: #050505; /* Deep rich black */
   --color-accent: #243d2b; 
   --color-background: #ffffff; 
