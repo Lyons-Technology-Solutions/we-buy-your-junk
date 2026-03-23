@@ -6,27 +6,27 @@
 // =============================================================================
 // HERO IMAGES
 // =============================================================================
-export { default as heroYard } from '../assets/images/hero/yard-operations.jpg';
+export { default as heroYard } from '../assets/images/hero/yard-operations.jpeg';
 
 // =============================================================================
 // SERVICE IMAGES  
 // =============================================================================
-export { default as serviceAutoParts } from '../assets/images/services/auto-parts.jpg';
+export { default as serviceAutoParts } from '../assets/images/services/auto-parts.jpeg';
 export { default as serviceJunkCars } from '../assets/images/services/junk-cars.jpg';
-export { default as serviceInventory } from '../assets/images/services/inventory.jpg';
+export { default as serviceInventory } from '../assets/images/services/inventory.jpeg';
 
 // =============================================================================
 // FACILITY IMAGES
 // =============================================================================
-export { default as facilityWarehouse } from '../assets/images/facility/warehouse.jpg';
+export { default as facilityWarehouse } from '../assets/images/facility/warehouse.jpeg';
 export { default as facilityExterior } from '../assets/images/facility/exterior.jpg';
 export { default as facilityHistory } from '../assets/images/facility/history.jpg';
 
 // =============================================================================
 // BLOG IMAGES
 // =============================================================================
-export { default as blogFeatured } from '../assets/images/blog/featured.jpg';
-export { default as blogDefault } from '../assets/images/blog/article-default.jpg';
+export { default as blogFeatured } from '../assets/images/blog/featured.jpeg';
+export { default as blogDefault } from '../assets/images/blog/article-default.jpeg';
 
 // =============================================================================
 // SEO-OPTIMIZED ALT TAGS
