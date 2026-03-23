@@ -8,7 +8,7 @@ const insights = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     author: z.string().default('Mike Thompson'),
-    authorRole: z.string().default('Owner, We Buy Your Junk LLC'),
+    authorRole: z.string().default('Owner, We Buy Your Junk INC'),
     category: z.enum(['Market Update', 'How-To', 'Industry News', 'Tips & Tricks', 'Community']),
     image: z.string().optional(),
     imageAlt: z.string().optional(),

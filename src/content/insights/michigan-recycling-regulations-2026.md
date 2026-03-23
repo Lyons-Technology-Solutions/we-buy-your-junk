@@ -3,7 +3,7 @@ title: "Michigan Recycling Regulations: 2026 Updates"
 description: "New state guidelines affect how scrap yards operate. We break down what you need to know."
 pubDate: 2025-12-15
 author: "Mike Thompson"
-authorRole: "Owner, We Buy Your Junk LLC"
+authorRole: "Owner, We Buy Your Junk INC"
 category: "Industry News"
 readTime: "3 min read"
 tags: ["regulations", "michigan", "compliance", "legal"]

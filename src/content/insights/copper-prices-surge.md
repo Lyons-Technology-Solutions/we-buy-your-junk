@@ -3,7 +3,7 @@ title: "Copper Prices Surge: What It Means for Scrappers"
 description: "Global copper demand continues to rise with the EV revolution. Here's how Jackson-area scrappers can maximize their returns."
 pubDate: 2026-01-15
 author: "Mike Thompson"
-authorRole: "Owner, We Buy Your Junk LLC"
+authorRole: "Owner, We Buy Your Junk INC"
 category: "Market Update"
 readTime: "4 min read"
 tags: ["copper", "market prices", "EV", "recycling"]

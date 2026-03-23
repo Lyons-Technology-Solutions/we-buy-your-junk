@@ -25,7 +25,7 @@ export const theme = {
 }
 
 export const business = {
-  name: 'We Buy Your Junk LLC',
+  name: 'We Buy Your Junk INC',
   tagline: 'Junking for Jesus in Jackson',
   phone: '(517) 220-6035',
   email: 'cllarocque@webuyyourjunk.org',

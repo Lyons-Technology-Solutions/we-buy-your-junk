@@ -32,13 +32,13 @@ export { default as blogDefault } from '../assets/images/blog/article-default.jp
 // SEO-OPTIMIZED ALT TAGS
 // =============================================================================
 export const altTags = {
-  heroYard: 'We Buy Your Junk LLC scrap metal yard in Jackson, Michigan with organized metal piles and recycling equipment',
-  serviceAutoParts: 'Quality used auto parts inventory at We Buy Your Junk LLC Jackson MI - engines, transmissions, and body panels',
-  serviceJunkCars: 'Junk car removal service in Jackson County Michigan - We Buy Your Junk LLC pays cash for junk vehicles',
-  serviceInventory: 'Used auto parts warehouse at We Buy Your Junk LLC featuring organized shelves of tested car components',
-  facilityWarehouse: 'Inside We Buy Your Junk LLC facility in Jackson MI showing industrial recycling operations',
-  facilityExterior: 'We Buy Your Junk LLC scrap yard entrance and facility exterior in Jackson Michigan',
-  facilityHistory: 'We Buy Your Junk LLC family-owned scrap metal business serving Jackson County since 2008',
-  blogFeatured: 'Scrap metal recycling industry insights and tips from We Buy Your Junk LLC Jackson Michigan',
-  blogDefault: 'Metal recycling and junk car buying guide from We Buy Your Junk LLC in Jackson MI',
+  heroYard: 'We Buy Your Junk INC scrap metal yard in Jackson, Michigan with organized metal piles and recycling equipment',
+  serviceAutoParts: 'Quality used auto parts inventory at We Buy Your Junk INC Jackson MI - engines, transmissions, and body panels',
+  serviceJunkCars: 'Junk car removal service in Jackson County Michigan - We Buy Your Junk INC pays cash for junk vehicles',
+  serviceInventory: 'Used auto parts warehouse at We Buy Your Junk INC featuring organized shelves of tested car components',
+  facilityWarehouse: 'Inside We Buy Your Junk INC facility in Jackson MI showing industrial recycling operations',
+  facilityExterior: 'We Buy Your Junk INC scrap yard entrance and facility exterior in Jackson Michigan',
+  facilityHistory: 'We Buy Your Junk INC family-owned scrap metal business serving Jackson County since 2008',
+  blogFeatured: 'Scrap metal recycling industry insights and tips from We Buy Your Junk INC Jackson Michigan',
+  blogDefault: 'Metal recycling and junk car buying guide from We Buy Your Junk INC in Jackson MI',
 };

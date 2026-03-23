@@ -3,7 +3,7 @@ title: "Steel Market Outlook: Winter 2026"
 description: "Construction slowdowns and global supply shifts are impacting steel prices. Here's our forecast."
 pubDate: 2025-10-25
 author: "Mike Thompson"
-authorRole: "Owner, We Buy Your Junk LLC"
+authorRole: "Owner, We Buy Your Junk INC"
 category: "Market Update"
 readTime: "4 min read"
 tags: ["steel", "market prices", "forecast", "construction"]
