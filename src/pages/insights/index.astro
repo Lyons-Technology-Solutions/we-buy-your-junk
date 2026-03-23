@@ -11,6 +11,10 @@ const sortedInsights = allInsights.sort((a, b) => b.data.pubDate.valueOf() - a.d
 const featuredInsight = sortedInsights.find(i => i.data.featured);
 const regularInsights = sortedInsights.filter(i => !i.data.featured || i.id !== featuredInsight?.id);
 
+function getSlug(id: string) {
+  return id.replace(/\.(md|mdx)$/, '');
+}
+
 // Format date helper
 function formatDate(date: Date): string {
   return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
@@ -71,7 +75,7 @@ function formatDate(date: Date): string {
         <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
           <!-- Featured Image/Placeholder -->
           <div class="lg:col-span-7 relative" data-animate="fade-right">
-            <a href={`/insights/${featuredInsight.id}`} class="block aspect-[4/3] bg-secondary rounded-[2.5rem] overflow-hidden relative group">
+            <a href={`/insights/${getSlug(featuredInsight.id)}`} class="block aspect-[4/3] bg-secondary rounded-[2.5rem] overflow-hidden relative group">
               <Image src={blogFeatured} alt={altTags.blogFeatured} class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent z-10"></div>
               <!-- Category Badge -->
@@ -164,7 +168,7 @@ function formatDate(date: Date): string {
       <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-stagger>
         {regularInsights.map((insight, index) => (
           <a 
-            href={`/insights/${insight.id}`} 
+            href={`/insights/${getSlug(insight.id)}`} 
             class:list={[
               "article-card group bg-white rounded-[2rem] overflow-hidden card-tactile relative",
               index === 0 ? "md:col-span-2 lg:col-span-2" : "",

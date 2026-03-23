@@ -8,11 +8,15 @@ import BreadcrumbStructuredData from '../../components/BreadcrumbStructuredData.
 
 export const prerender = true;
 
+function getSlug(id: string) {
+  return id.replace(/\.(md|mdx)$/, '');
+}
+
 export async function getStaticPaths() {
   const allInsights = await getCollection('insights', ({ data }) => !data.draft);
 
   return allInsights.map((entry) => ({
-    params: { slug: entry.slug ?? entry.id }
+    params: { slug: getSlug(entry.id) }
   }));
 }
 
@@ -24,14 +28,14 @@ if (!slug) {
 }
 
 const allInsights = await getCollection('insights', ({ data }) => !data.draft);
-const entry = allInsights.find((insight) => (insight.slug ?? insight.id) === slug);
+const entry = allInsights.find((insight) => getSlug(insight.id) === slug);
 
 if (!entry || entry.data.draft) {
   return Astro.redirect('/insights');
 }
 const { Content } = await entry.render();
 
-const entrySlug = entry.slug ?? entry.id;
+const entrySlug = getSlug(entry.id);
 
 // Get related articles (same category, excluding current)
 const relatedInsights = allInsights
@@ -83,7 +87,7 @@ const articleUrl = `${siteUrl}/insights/${entrySlug}`;
     items={[
       { name: 'Home', url: '/' },
       { name: 'Insights', url: '/insights' },
-      { name: entry.data.title, url: `/insights/${entry.id}` }
+      { name: entry.data.title, url: `/insights/${getSlug(entry.id)}` }
     ]}
   />
 
@@ -241,7 +245,7 @@ const articleUrl = `${siteUrl}/insights/${entrySlug}`;
 
         <div class="grid md:grid-cols-2 gap-8" data-stagger>
           {relatedInsights.map((related) => (
-            <a href={`/insights/${related.id}`} class="group bg-white rounded-[2rem] overflow-hidden card-tactile">
+            <a href={`/insights/${getSlug(related.id)}`} class="group bg-white rounded-[2rem] overflow-hidden card-tactile">
               <div class="p-10 flex flex-col min-h-[280px]">
                 <div class="flex items-center justify-between mb-6">
                   <span class="bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full">
