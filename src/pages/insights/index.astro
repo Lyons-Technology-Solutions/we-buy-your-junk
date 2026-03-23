@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import { blogFeatured, altTags } from '../../lib/images';
+import { getSlug } from '../../lib/utils';
 
 // Get all published insights, sorted by date
 const allInsights = await getCollection('insights', ({ data }) => !data.draft);
@@ -10,10 +11,6 @@ const sortedInsights = allInsights.sort((a, b) => b.data.pubDate.valueOf() - a.d
 
 const featuredInsight = sortedInsights.find(i => i.data.featured);
 const regularInsights = sortedInsights.filter(i => !i.data.featured || i.id !== featuredInsight?.id);
-
-function getSlug(id: string) {
-  return id.replace(/\.(md|mdx)$/, '');
-}
 
 // Format date helper
 function formatDate(date: Date): string {

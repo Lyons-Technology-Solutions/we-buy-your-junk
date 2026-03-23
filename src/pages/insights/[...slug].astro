@@ -5,12 +5,10 @@ import { Image } from 'astro:assets';
 import { blogDefault, altTags } from '../../lib/images';
 import ArticleStructuredData from '../../components/ArticleStructuredData.astro';
 import BreadcrumbStructuredData from '../../components/BreadcrumbStructuredData.astro';
+import { getSlug } from '../../lib/utils';
 
 export const prerender = true;
 
-function getSlug(id: string) {
-  return id.replace(/\.(md|mdx)$/, '');
-}
 
 export async function getStaticPaths() {
   const allInsights = await getCollection('insights', ({ data }) => !data.draft);
