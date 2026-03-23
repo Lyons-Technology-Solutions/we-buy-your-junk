@@ -18,12 +18,26 @@ const faqs = [
   { q: 'Is free pickup available?', a: 'We offer free hauling for junk vehicles and large industrial loads within Jackson County.' },
   { q: 'How is pricing determined?', a: 'Prices fluctuate daily based on global market commodities. We use certified digital scales for precision.' },
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
 ---
 
 <Layout 
-  title="Scrap Metal Prices & Services | We Buy Your Junk LLC | Jackson, MI"
+  title="Scrap Metal Prices & Buying | We Buy Your Junk | Jackson, MI"
   description="Top prices for scrap metal in Jackson, Michigan. We buy copper, brass, aluminum, steel, radiators, catalytic converters, and more. Free pickup available."
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <!-- Page Header -->
   <section class="pt-48 pb-24 border-b border-warm-gray relative overflow-hidden">
     <!-- Vertical Detail -->
