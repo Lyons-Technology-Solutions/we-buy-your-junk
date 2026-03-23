@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.webuyyourjunk.net/sitemap-index.xml
+Sitemap: https://webuyyourjunk.net/sitemap-index.xml
