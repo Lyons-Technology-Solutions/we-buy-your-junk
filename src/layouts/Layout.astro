@@ -59,6 +59,15 @@ const ogImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
     <!-- Local Business Schema -->
     <StructuredData />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6WNJ7BF2C8"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6WNJ7BF2C8');
+    </script>
   </head>
   <body class="bg-background text-text selection:bg-primary selection:text-white overflow-x-hidden">
     
